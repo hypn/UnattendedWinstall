@@ -327,6 +327,15 @@ reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start" /v Allo
 reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start" /v AllowPinnedFolderFileExplorer /t REG_DWORD /d 00000001 /f
 reg.exe add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start" /v AllowPinnedFolderFileExplorer_ProviderSet /t REG_DWORD /d 00000001 /f
 
+:: Speed up task killing and shutdown
+reg.exe add "HKCU\Control Panel\Desktop" /v AutoEndTasks /t REG_SZ /d 1 /f
+reg.exe add "HKCU\Control Panel\Desktop" /v HungAppTimeout /t REG_SZ /d 1000 /f
+reg.exe add "HKCU\Control Panel\Desktop" /v WaitToKillAppTimeOut /t REG_SZ /d 2000 /f
+reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t REG_SZ /d 2000 /f
+reg.exe add "HKU\DefaultUser\Control Panel\Desktop" /v AutoEndTasks /t REG_SZ /d 1 /f
+reg.exe add "HKU\DefaultUser\Control Panel\Desktop" /v HungAppTimeout /t REG_SZ /d 1000 /f
+reg.exe add "HKU\DefaultUser\Control Panel\Desktop" /v WaitToKillAppTimeOut /t REG_SZ /d 2000 /f
+
 :: Enable Long File Paths with Up to 32,767 Characters
 reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
 
