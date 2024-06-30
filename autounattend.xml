@@ -134,8 +134,12 @@
             <NetworkLocation>Work</NetworkLocation>
             <ProtectYourPC>3</ProtectYourPC>
         </OOBE>
-        <FirstLogonCommands>       
-        </FirstLogonCommands>
+				<FirstLogonCommands>
+					<SynchronousCommand wcm:action="add">
+						<Order>1</Order>
+						<CommandLine>powershell.exe -NoProfile -Command "Disable-ComputerRestore -Drive 'C:\';"</CommandLine>
+					</SynchronousCommand>
+				</FirstLogonCommands>
     </component>
 </settings>
 	<Extensions>
