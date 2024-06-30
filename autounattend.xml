@@ -502,7 +502,7 @@ reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v "Product
 net.exe accounts /maxpwage:UNLIMITED
 
 # Allow Execution of PowerShell Script Files
-Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force
+# Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force
 
 # Groups or splits svchost.exe processes based on the amount of physical memory in the system to optimize performance
 $ram = (Get-CimInstance -ClassName Win32_PhysicalMemory | Measure-Object -Property Capacity -Sum).Sum / 1kb
